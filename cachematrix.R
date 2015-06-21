@@ -21,9 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
         # When the matrix is set the cache variable is intialized to NULL
         setMatrix <- function(y) {
                 x <<- y
-                cachedInverse <<- NULL
-                message("Matrix was set")
-                
+                cachedInverse <<- NULL                
         }
         #Return the previously set matrix
         getMatrix <- function() x
@@ -57,7 +55,7 @@ cacheSolve <- function(x, ...) {
         data <- x$getMatrix()
         # And calculate the inverse of such matrix.
         inv <- solve(data)
-        # Set the inverse o matrix into cache so next time it can be got from cache.
+        # Set the inverse of the matrix into cache so next time it can be got from cache.
         x$setInverse(inv)
         message("This matrix is NOT from cache.")        
         inv
